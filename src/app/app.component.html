@@ -1,20 +1,65 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
 
+<header class="header">
+  <mat-toolbar class="toolbar" color="primary">
+      <div class="title">
+          HIVE-ai Robotnicks - pixel robots, system reboot ... <span class="qbot">[ -O- ] ] -O- [</span>
+      </div>
+      <div class="flex-divider"></div>
+      <div class="search-box">
+        <mat-form-field class="example-full-width">
+          <input type="tel" matInput>
+        </mat-form-field>
+      </div>
+  </mat-toolbar>
+</header>
+
+<!-- will be hidden on large screens -->
+<!--
+<section class="container">
+  <div class="row">
+    <mat-card class="col-md-6">1</mat-card>
+    <mat-card class="col-md-6">2</mat-card>
+    <mat-card class="col-md-6 d-block d-lg-none">3</mat-card>
+    <mat-card class="col-md-6 d-block d-lg-none">4</mat-card>
+  </div>
+</section> -->
+<section id='qbot' class='qbot'>
+  <svg width="1920" height="120" viewBox="0 0 1920 120" xmlns="http://www.w3.org/2000/svg">
+    <ng-container *ngFor="let item of polygons">
+        <svg id='{{item.type}}'>
+        {
+            item.type,
+            yurzui,
+            polygon { <svg:polygon [attr.points]="item.points"/> }
+            circle  { <svg:circle [attr.cx]="item.x" [attr.cy]="item.y" [attr.r]="radius"/> }
+            polygon { <svg:polygon [attr.points]="item.points2"/> }
+        }
+      </svg>
+    </ng-container>
+  </svg>
+</section>
+
+<!--
+<section id="canvas" class='canvas'>
+  <svg id="SVG_scene" class='svg-scene' xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" (onload)="svgInit()"></svg>
+</section> -->
+
+<section id="canvas" class='canvas'>
+  <svg id="SVG_scene2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1920" height="600"></svg>
+</section>
+
+
+<section>
+  <button (click)="superSizeMe()">SUPERSIZE</button>
+  <button (click)="miniSizeMe()">MINISIZE</button>
+  <button (click)="showMe()">SHOWME</button>
+  <button (click)="drawPlan()">DRAWME</button>
+  <button (click)="drawPlanLinear()">DRAWMELINEAR</button>
+  <button (click)="nodeMe()">NODEME</button>
+  <button (click)="leftMe()">LEFTME</button>
+  <button (click)="rightMe()">RIGHTME</button>
+  <button (click)="moveMe()">MOVEME</button>
+</section>
+
+
+<footer></footer>
